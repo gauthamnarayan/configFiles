@@ -2,7 +2,7 @@
 set -g prefix `
 set -g prefix2 C-b
 bind-key ` send-prefix
-bind-key C-b send-prefix2
+#bind-key C-b send-prefix2
 
 set -g status on
 
@@ -10,7 +10,7 @@ set -g status on
 set-window-option -g xterm-keys on
 
 # To reduce  wait for key after prefix key input
-set-option repeat-time 100
+set -g repeat-time 100
 
 # Mouse support - set to on if you want to use the mouse
 # set -g mouse on
@@ -22,4 +22,10 @@ set -g default-terminal "screen-256color"
 # Shift arrow to switch windows
 bind -n S-Left  previous-window
 bind -n S-Right next-window
+
+# Open new windows/panes in current directory.
+# tmux set-option default-path "$PWD"
+bind '"' split-window -c "#{pane_current_path}"
+bind % split-window -h -c "#{pane_current_path}"
+bind c new-window -c "#{pane_current_path}"
 
