@@ -31,26 +31,3 @@ set nocompatible              " be iMproved, required
 set tabstop=4
 filetype off                  " required
 filetype plugin indent on    " required
-
-command W w "To map W to w, to prevent mistaken W's while writing files.
-command Q q "To map Q to q, to prevent mistaken W's while closing files.
-command WQ wq "To map W to w, to prevent mistaken W's while closing files.
-command Wq wq "To map W to w, to prevent mistaken W's while closing files.
-
-" 3) navigate by display lines. Allows to edit a large line without parsing
-" through the whole line.
-noremap j gj
-noremap k gk
-
-" 4) switch splits easily
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
-
-" 5) better searches
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-
