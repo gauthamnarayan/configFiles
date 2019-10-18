@@ -12,6 +12,9 @@ Plugin 'valloric/youcompleteme'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Yggdroot/indentLine'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'raingo/vim-matlab'
+
 
 "let g:ycm_global_ycm_extra_conf = '$USER/.vim/bundle/.ycm_extra_conf.py'
 "let g:ycm_global_ycm_extra_conf = '/home/gautham/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
@@ -62,7 +65,6 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 "Navigating and creating new tabs
-
 map <C-t> :tabnew<cr>
 map <C-q><up> :tabr<cr>
 map <C-q><down> :tabl<cr>
@@ -73,7 +75,11 @@ map <C-q><right> :tabn<cr>
 set timeout timeoutlen=3000 ttimeoutlen=10
 
 "NERDTree Toggle
-map <C-e> :NERDTreeToggle<CR>
+map <C-a> :NERDTreeToggle<CR>
+"NERDTree autoclose on opening a file
+let NERDTreeQuitOnOpen = 1
+" To remove 'press ? for help at the top of NERDTree'
+let NERDTreeMinimalUI=1
 
 
 " Natural Split opening.
@@ -114,3 +120,15 @@ let g:indentLine_color_term = 239
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 set conceallevel=1
 let g:indentLine_conceallevel=1
+
+"Vim - multicursor shortcuts
+let g:multi_cursor_use_default_mapping=0
+" Default mapping
+let g:multi_cursor_start_word_key      = '<C-n>'
+let g:multi_cursor_select_all_word_key = '<A-n>'
+let g:multi_cursor_start_key           = 'g<C-n>'
+let g:multi_cursor_select_all_key      = 'g<A-n>'
+let g:multi_cursor_next_key            = '<C-n>'
+let g:multi_cursor_prev_key            = '<C-p>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
