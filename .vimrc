@@ -10,10 +10,11 @@ Plugin 'scrooloose/nerdtree'
 "Plugin 'scrooloose/syntastic'
 Plugin 'valloric/youcompleteme'
 Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdcommenter'
+"Plugin 'scrooloose/nerdcommenter'
 Plugin 'Yggdroot/indentLine'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'raingo/vim-matlab'
+Plugin 'preservim/nerdcommenter'
 
 
 "let g:ycm_global_ycm_extra_conf = '$USER/.vim/bundle/.ycm_extra_conf.py'
@@ -66,10 +67,10 @@ nnoremap <C-H> <C-W><C-H>
 
 "Navigating and creating new tabs
 map <C-t> :tabnew<cr>
-map <C-q><up> :tabr<cr>
-map <C-q><down> :tabl<cr>
-map <C-q><left> :tabp<cr>
-map <C-q><right> :tabn<cr>
+map <C-g><up> :tabr<cr>
+map <C-g><down> :tabl<cr>
+map <C-g><left> :tabp<cr>
+map <C-g><right> :tabn<cr>
 
 "Set key timeouts"
 set timeout timeoutlen=3000 ttimeoutlen=10
@@ -79,7 +80,7 @@ map <C-a> :NERDTreeToggle<CR>
 "NERDTree autoclose on opening a file
 let NERDTreeQuitOnOpen = 1
 " To remove 'press ? for help at the top of NERDTree'
-let NERDTreeMinimalUI=1
+" let NERDTreeMinimalUI=1
 
 
 " Natural Split opening.
