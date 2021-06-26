@@ -115,3 +115,43 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+
+###############################
+# Gautham's edits 
+###############################
+
+# Setting python to system python which is version 2.7.17. This is for ROS to work correctly.
+# alias python=/usr/bin/python
+# export PATH=/usr/local/cuda-10.2/bin${PATH:+:${PATH}}
+# export PATH=/home/gautham/anaconda3/bin${PATH:+:${PATH}}
+# export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/gautham/.mujoco/mujoco200/bin
+# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/nvidia-440
+
+# This is for mujoco-py visualisation to work correctly
+# export LD_PRELOAD=$LD_PRELOAD:/usr/lib/x86_64-linux-gnu/libGLEW.so:/usr/lib/x86_64-linux-gnu/libGL.so
+
+# Aliasing commands for quick and easy environment setup.
+alias goto_franka_dir='cd /home/gautham/programs/RPAD/trials/franka_experiments/scripts'
+alias goto_pouring_dir='cd /home/gautham/programs/RPAD/trials/pouring/trials'
+alias goto_gns_dir='cd /home/gautham/programs/RPAD/trials/pouring/literature_projects/deepmind-research/learning_to_simulate'
+alias goto_taichi_dir='cd /home/gautham/programs/RPAD/trials/pouring/literature_projects/taichi'
+alias goto_unet_dir='cd /home/gautham/programs/RPAD/trials/unet_trials'
+alias goto_rig_sim2real_dir='cd /home/gautham/programs/RPAD/trials/rig_trials/yufei_sim2real/rlkit'
+alias goto_trials='cd /home/gautham/programs/trials'
+alias prep_franka='curr_dir=$(pwd); cd /home/gautham/programs/RPAD/trials/franka_experiments/dependencies/frankapy/catkin_ws; source /home/gautham/programs/RPAD/trials/franka_experiments/dependencies/frankapy/catkin_ws/devel/setup.bash; cd $curr_dir; unset curr_dir; source ~/environments/frankapy_rlkit_env/bin/activate;'
+
+# Productivity Aliasing commands
+
+# open fzf searched file in vim
+alias vf='vim $(fzf)'
+
+# Loading fzf bashconfig
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Setting FZF to use ripgrep
+if type rg &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files'
+  export FZF_DEFAULT_OPTS='-m --height 50% --border'
+fi
